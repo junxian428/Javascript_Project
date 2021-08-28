@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title>Webcam</title>
+    <style>
+       #camera{
+           width: 350px;
+           height: 350px;
+           border: 1px solid black;
+        
+        
+       }
+	
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<div id="camera" ></div>
+<button onclick="take_snapshot()">Take Snapshot</button>
+<button onclick="saveImageAs(document.anImage); return false">View</button>
+<div id="download" style="display:inline;  ">
+</div>
+<br>
+<div style="display:inline;">
+	<select name="filter" id="filter">
+		<option value="ori">Original</option>
+		<option value="bw">Black & White</option>
+		<option value="blur">Blur</option>
+		
+
+	</select>
+</div>
+<button style="display:inline;" onclick="edit();">Press For Filter</button>
+<button style="display:inline;" onclick="fphoto();"><a id="fphoto" style="text-decoration:none;">Download Filtered Photo</a></button>
+<h3>Preview Effect</h3>
+<div id="results">
+<div>
+<br>
+
+
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+<script>
+
+    function take_snapshot(){
+        // Load all webcam
+        Webcam.set({
+            width:350,
+            height: 350,
+            image_format:'jpeg',
+            jpeg_quality:90
+        })
+
+    }
+    Webcam.attach("#camera")
+
+    function take_snapshot(){
+        Webcam.snap(function(data_uri) {
+            document.getElementById('results').innerHTML = '<img id="anImage" src="'+data_uri+'"/>';
+	    var image1 = new Image();
+	    image1.src = document.getElementById("anImage").src;
+	    document.getElementById('download').innerHTML = '<button><a href="'+image1.src +'" download="photo" style="color:black; text-decoration:none;">Download </a></button>';
+	  
+
+        });
+    }
+    function saveImageAs (data){
+	    if(typeof data == 'object')
+		    data = data.src;
+
+	   
+	    var image = new Image();
+	    image.src = document.getElementById("anImage").src;
+	    var w = window.open("");
+	    w.document.write(image.outerHTML);
+	    w.document.execCommand("SaveAs",null,'image15.jpeg');
+	    
+    }
+    function edit(){
+         var color = document.getElementById('filter').selectedIndex;
+         var filter1 = document.getElementsByTagName("option")[color].value;
+	 if(filter1 === "bw"){
+		document.getElementById("results").style = "-webkit-filter:grayscale(100%); grayscale(100%);";
+		var imgReplace = document.getElementsByClassName("duplicate");
+
+
+	}
+	else if(filter1 === "ori"){
+	 	document.getElementById("results").style = "-webkit-filter:grayscale(0%); grayscale(0%);";
+	}
+	else if(filter1 === "blur"){
+                document.getElementById("results").style="-webkit-filter:blur(5px); filter:blur(5px);";
+	}
+        else{
+          alert("Invalid Options;");
+	}
+
+    }
+	
+
+
+
+
+
+   
+</script>
+</html>
+
+
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+
+		<title>Web Phone</title>
+<style>
+#phone {
+
+background-image: url('https://wallpaperaccess.com/full/833312.png');
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position:center;
+}
+#time{
+
+font-size: 60px;
+display: flex !important;
+justify-content: center !important;
+align-items:center !important;
+}
+#bottom{
+display: flex !important;
+justify-content: center !important;
+align-items: center !important;
+
+}
+#searchbar{
+margin-top: 15px;
+display: flex !important;
+justify-content: center !important;
+align-items:center !important;
+margin-bottom: 15px;
+}
+#app {
+margin-top:15px;
+display:flex !important;
+justify-content: center !important;
+align-items: center !important;
+margin-bottom: 30px;
+
+
+}
+#mystery {
+                display: none;
+			    margin-top: 10px;
+			    list-style-type: none;
+			    
+
+		
+}
+</style>
+	<script>
+
+               function clock(){
+
+                     var today = new Date();
+		      var h = today.getHours();
+		       var m = today.getMinutes();
+		       var s = today.getSeconds();
+		       m = checkTime(m);
+		       s = checkTime(s);
+		       document.getElementById('time').innerHTML = h + ":" + m +":"+s;
+		       var t = setTimeout(clock, 500);
+
+	        }
+
+		function checkTime(i){
+                   if(i<10){
+                        i = "0" + i;
+		   }
+                   return i;
+		}
+
+
+	</script>
+
+
+
+	</head>
+
+	<body onload="clock()">
+
+              <div id="phone" >
+                       <div id="time"></div>
+		       <div id="searchbar">
+                          <input type="text" style="width: 30%;" height="250"></input>
+			  
+		       </div>
+		       <div id="app">
+                           <table>
+                               <tr>
+				       <td><a href="javascript/camera/index.html"><img src="https://i.dlpng.com/static/png/6362886_preview.png" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Camera</span></td>
+				         <td><a href="javascript/calculator/index.html"><img src="https://cdn.iconscout.com/icon/free/png-256/calculator-2665329-2210802.png" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Calculator</span></td>
+				     <td><img src="https://image.flaticon.com/icons/png/512/1085/1085821.png" width="50" height="50" style="display:inline-block;"><span style="display:block;">Compiler</span></td>
+                                        <td><img src="https://user-images.githubusercontent.com/20235646/42320863-85dcab22-8074-11e8-9288-35d18a4eaa9f.png" width="50" height="50" style="display:inline-block;"><span style="display:block;">Termux</span></td>
+				       <td><a href="javascript"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmjVK6u6XTBwcV_Nold1nRQYH-wjF0N7y7AS2_b3LCCzsOsZkOlJL9SL6Mo-QjCB4YJcs&usqp=CAU" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Files</span></td>
+
+			       </tr>
+			       <tr>
+                           		  <td><a href="javascript/voice/index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIfOBVGd0JcLgcssDkvGJbp24r9xlrJdDlF9JolkiMNm5zJatci3kipF31tW0nk0V-dbw&usqp=CAU" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Voice Assist</span></td>
+				         <td><a href="javascript/Maps/index.html"><img src="https://cdn.iconscout.com/icon/free/png-512/google-maps-1-555382.png" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Maps</span></td>
+				     <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAIeYcGMv9kNhJKYUxAKwQcl8y_MCDmclNUg&usqp=CAU" width="50" height="50" style="display:inline-block;"><span style="display:block;">Recorder</span></td>
+                                        <td><img src="https://www.pngkey.com/png/full/230-2304720_keyboard-icon-png-computer-keyboard.png" width="50" height="50" style="display:inline-block;"><span style="display:block;">Keyboard</span></td>
+				       <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh_bxh5-tncHC8QvbT59BC0-vHsTbQGuP1Vw&usqp=CAU" width="50" height="50" style="display:inline-block;"><span style="display:block;">QR Code</span></td>
+
+			       </tr>
+				<tr>
+
+					  <td><div style="display:inline-block;"><button onclick="wallpaper()"><img src="https://icon-library.com/images/wallpaper-icon/wallpaper-icon-20.jpg" width="50" height="50" style="display:inline-block;"></button>
+					
+					<select id="mystery">
+					<option value="wall1">Wallpaper1</option>
+					<option value="wall2">Wallpaper2</option>
+					<option value="wall3">Wallpaper3</option>
+					</select>
+					
+					</div><span style="display:block;"><button onclick="changeWallpaper()">Wallpaper</button></span></td>
+
+				         <td><img src="https://image.flaticon.com/icons/png/512/2991/2991106.png" width="50" height="50" style="display:inline-block;"><span style="display:block;">Docs</span></td>
+				     <td><a href="game.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/1024px-Video-Game-Controller-Icon-IDV-green.svg.png" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Game</span></td>
+                                        <td><a href="javascript/MusicPlayer/index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Simple_Music.svg" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Music</span></td>
+				       <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmiggJX9E30MNwnDrearvfGesGGmFK_oE2pA&usqp=CAU" width="50" height="50" style="display:inline-block;"><span style="display:block;">Ecommerce</span></td>
+
+
+				</tr>
+				<tr>
+
+					  <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuobMr3xdpmbke4cq-jJn2scWRdCC6cpSyjoygCouV5quVZY871_GGPXJLqGcKEHIFUhA&usqp=CAU" width="50" height="50" style="display:inline-block;"><span style="display:block;">Call</span></td>
+				         <td><a href="javascript/Email/index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW6l1C4f7iJZy0pZloRpWV5Oc0GcmC5elJwA&usqp=CAU" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Email</span></td>
+				     <td><img src="https://static.thenounproject.com/png/1656740-200.png" width="50" height="50" style="display:inline-block;"><span style="display:block;">Note</span></td>
+                                        <td><img src="https://img.icons8.com/ios/452/video-gallery.png" width="50" height="50" style="display:inline-block;"><span style="display:block;">Video</span></td>
+				       <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn5eJ7JULcWaUW94vSgchfOwnbLzc-zZDwlA&usqp=CAU" width="50" height="50" style="display:inline-block;"><span style="display:block;">Calender</span></td>
+
+
+				</tr>
+
+				<tr>
+
+					  <td><a href="https://www.google.com"><img src="https://www.computerhope.com/jargon/c/chrome-logo-large.jpg" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Google</span></td>
+				         <td><a href="https://www.facebook.com"><img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/facebook_icon_130940.png" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Facebook</span></td>
+				     <td><a href="https://www.youtube.com"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0g9VmvDQ-rY2POfarC-iA5uSU77f0bRHoA&usqp=CAU" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Youtube</span></td>
+                                        <td><a href="https://github.com"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwDgXJFrgL2lz3wPnjr04OBwyRHdjLgH2vV2Zn4xQQIvo31KaI2S6apYmivUMbcLAeZdo&usqp=CAU" width="50" height="50" style="display:inline-block;"></a><span style="display:block;">Github</span></td>
+				       <td><a href="https://www.reddit.com"><img src="https://image.flaticon.com/icons/png/512/3128/3128364.png" width="50" height="50" style="display:inline-block;"><a/><span style="display:block;">Reddit</span></td>
+				</tr>
+
+			   </table>
+		       </div>
+
+		       <div id="bottom">
+
+			       <button><img src="https://iconarchive.com/download/i87614/icons8/ios7/Arrows-Left-2.ico" width="100px" height="100px"></button>
+			      <button><a href="index.html"><img src="https://png.pngtree.com/png-clipart/20200710/ourmid/pngtree-creative-circle-vector-sale-e-commerce-promotion-label-png-image_2302904.jpg" width="100px" height="100px"></a></button>
+			      <button><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSjapahiVpOhNVWCzXlLlYWO7oxQGGU5d0n6aRzC9JdNHGLxt_Z4l-S-hRVV3W1qUh44M&usqp=CAU" width="100px" height="100px"></button>
+		       </div>
+	      </div>
+              <script>
+
+ function wallpaper() {
+                             var x = document.getElementById("mystery");
+			   if (x.style.display === "block") {
+                            x.style.display = "none";
+
+			   }
+			   else 
+			   {
+				   x.style.display = "block";
+			   }
+			   
+ 
+		   }
+  function changeWallpaper(){
+         var wallpaper = document.getElementById('mystery').selectedIndex;
+         var changev = document.getElementsByTagName("option")[wallpaper].value;
+	 if(changev === "wall1"){
+		document.getElementById("phone").style = "background-image: url('https://wallpaperaccess.com/full/833312.png');";
+
+
+	}
+	else if(changev === "wall2"){
+		document.getElementById("phone").style = "background-image: url('https://i.pinimg.com/originals/2d/44/e9/2d44e965dff94b7aa7a51fb42f25faf8.gif');";
+	}
+	else if(changev === "wall3"){
+           	document.getElementById("phone").style = "background-image: url('https://i.pinimg.com/originals/e8/68/5a/e8685a9cd5689d70211afc6b6f74f756.gif');";
+	}
+        else{
+          alert("Invalid Options;");
+	}
+
+    }
+	
+</script>
+	</body>
+
+
+
+</html>

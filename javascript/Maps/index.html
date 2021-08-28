@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+<button onclick="myMap()">Generate</button>
+<p id="demo"></p>
+
+<h1>My First Google Map</h1>
+
+<div id="googleMap" style="width:60%;height:400px;"></div>
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVoNu9KvlyWRg6iCmf9SJSiJuuyO0OG2U&callback=myMap"></script>
+
+<script>
+var x = document.getElementById("demo");
+var latitude = 0;
+var longitude = 0;
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+   latitude = position.coords.latitude;
+   longitude = position.coords.longitude;
+}
+
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(latitude,longitude),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+
+
+</script>
+
+</body>
+</html>

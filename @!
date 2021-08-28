@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+
+		<title>Web Phone</title>
+<style>
+#phone {
+
+background-image: url('https://wallpaperaccess.com/full/833312.png');
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position:center;
+display: inline;
+
+}
+#time{
+margin: auto;
+position: center;
+font-size: 30px;
+display:inline;
+width:50%;
+text-align: center;
+}
+</style>
+	<script>
+
+               function clock(){
+
+                     var today = new Date();
+		      var h = today.getHours();
+		       var m = today.getMinutes();
+		       var s = today.getSeconds();
+		       m = checkTime(m);
+		       s = checkTime(s);
+		       document.getElementById('time').innerHTML = h + ":" + m +":"+s;
+		       var t = setTimeout(clock, 500);
+
+	        }
+
+		function checkTime(i){
+                   if(i<10){
+                        i = "0" + i;
+		   }
+                   return i;
+		}
+
+
+	</script>
+
+
+
+	</head>
+
+	<body onload="clock()">
+
+              <div id="phone" >
+                       <div id="time"></div>
+
+	      </div>
+
+	</body>
+
+
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Music Player</title>
+
+
+	</head>
+	<body>
+		<ol style="font-size:30px">
+		<li><button style="border:none; outline: none; font-size:30px;" onclick="changeSong('Music/song1.mp3')">Black Beatles</button></li>
+		<li><button style="border:none; outline: none;font-size:30px;"onclick="changeSong('Music/song2.mp3')">Capsize</button></li>
+		<li><button style="border:none; outline: none;font-size:30px;"onclick="changeSong('Music/song3.mp3')">Crush</button></li>
+		<li><button style="border:none; outline: none;font-size:30px;"onclick="changeSong('Music/song4.mp3')">Roses</button></li>
+		<li><button style="border:none; outline: none;font-size:30px;"onclick="changeSong('Music/song5.mp3')">Bad Things</button></li>
+		<li><button style="border:none; outline: none;font-size:30px;"onclick="changeSong('Music/song6.mp3')">Let Me Go</button></li>
+		<li><button style="border:none; outline: none;font-size:30px;"onclick="changeSong('Music/song7.mp3')">Be Alright</button></li>
+		<li><button style="border:none; outline: none;font-size:30px;"onclick="changeSong('Music/song8.mp3')">I Like It</button></li>
+		</ol>
+		<button onclick="playAudio()"><img src="https://cdn.icon-icons.com/icons2/2226/PNG/512/play_icon_134504.png" width="100" height="100"></button>
+		<button onclick="pauseAudio()"><img src="https://image.flaticon.com/icons/png/512/26/26445.png" width="100" height="100"></button>
+		<div id="playlist">
+
+<audio id="myAudio">
+	<source src="" type="audio/mpeg">
+</audio>
+		</div>
+
+
+	</body>
+
+
+	<script>
+ 
+var x = document.getElementById("myAudio");
+		
+function changeSong(music){
+  document.getElementById("myAudio").pause();
+  document.getElementById("myAudio").setAttribute('src',music);
+  document.getElementById("myAudio").load();
+  document.getElementById("myAudio").play();
+}
+
+function playAudio() {
+  x.play();
+
+}
+
+function pauseAudio() {
+  x.pause();
+
+}
+
+
+
+	</script>
+
+</html>

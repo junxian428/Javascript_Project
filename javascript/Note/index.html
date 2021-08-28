@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Note</title>
+		<style>
+		body{
+                  height:100%;
+
+		}
+		textarea{
+
+  			width:100%;
+			height: 70vh;
+			
+
+		}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<textarea id="note"></textarea>
+		<button type="button" onclick="download()">Save</button>
+
+	<script>
+		function download(){
+                    var text = document.getElementById("note").value;
+	     	   text = text.replace(/\n/g, "\r\n");
+	           var blob = new Blob([text], {type:"text/plain"});
+		   var anchor = document.createElement("a");
+	           anchor.download = "note.txt";
+	           anchor.href = window.URL.createObjectURL(blob);
+		   anchor.target = "_blank";
+		   anchor.style.display = "none";
+		   document.body.appendChild(anchor);
+		   anchor.click();
+		   document.body.removeChild(anchor);
+
+ 
+
+		}
+
+	</script>
+	</body>
+
+</html>

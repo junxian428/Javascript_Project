@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+
+
+	</head>
+<body>
+<style>
+      	
+    #mystery {
+                display: none;
+			    margin-top: 10px;
+			    list-style-type: none;
+			    text-align: left;
+
+		
+	}
+
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none inline-block;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  margin-top:30px;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+ 
+</style>
+	<ul style="display: inline; list-style-type:none; ">
+          <li style="display: inline; position:fixed;"><a>Home</a></li>
+	  <li style="margin-left:80px; display:inline; position: fixed; "><a href="phone.html" style="text-decoration: none; color: black;">Phone</a></li>
+	  <li style="display:inline; margin-left:150px; >
+          <div style="display:inline-block; ">
+          <button style="margin-left:20px; display: inline ; border:none; font-size:15px;" onclick="Dropdown()">Dropdown</button>
+	     <ul id="mystery">
+
+		     <li>News</li>
+		     <li>Coffee</li>
+	     </ul>
+	    
+          </li>
+	  <li style="margin-left:150px; display: inline; position:fixed; "><input type=text placeholder="Search"></li>
+	  <li style="display: inline; position: fixed; margin-left: 280px; "><button>Search</button></li>
+	</ul>
+
+<!-- SlideShow -->
+
+<div class="slideshow-container" >
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>   
+  <a href="javascript/Ecommerce/index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Shopping_cart_icon.svg/1200px-Shopping_cart_icon.svg.png" style="width:40%"></a>
+  <div class="text">Online Shopping</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <a href="phone.html"><img src="https://static.digit.in/default/50c451fd60a33ae80e8475bf9d051f6e73dc580e.jpeg?tr=w-1200" style="width:40%"></a>
+  <div class="text">Web Phone</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://external-preview.redd.it/13tUcQ4gDRJrCSnhn380JfUEo5192Q_KYDCYMiomvw8.jpg?auto=webp&s=1c0fe3001a234780f393af44503d81b674aebbed"style="width:40%">
+  <div class="text">Crazy Feature</div>
+</div>
+
+<div style="text-align:center display:inline-block;">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+</div>
+
+
+
+<br>
+
+<p>	Welcome To TechStar Inc. We offer amazing services such as E-commerce to the whole world. The realiable services is make us trustworthy to the public. Furthermore, our team
+has the ability to launch the new web phone with the surprising features. For your information, our companys have established the largest warehouse and greatest management system to make sure our
+delivery will be fastest among the industry. The qualify is assured. The founder would like to thank all of customers support all the way until now</p>
+
+<footer style="blackground-color:grey;">
+
+	<p>Copyright 2021 TechStar Inc.</p>
+
+</footer>
+<script>(function(w, d) { w.CollectId = "6083aee934b8b76f099efa77"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+	<script>
+                   function Dropdown() {
+                             var x = document.getElementById("mystery");
+			   if (x.style.display === "block") {
+                            x.style.display = "none";
+
+			   }
+			   else 
+			   {
+				   x.style.display = "block";
+			   }
+			   
+ 
+		   }
+
+
+
+<!-- SlideShow -->
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+
+	</script>
+</body>
+</html>

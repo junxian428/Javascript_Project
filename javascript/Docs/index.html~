@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Docs</title>
+
+
+	</head>
+
+
+	<body>
+		<h3>Portal</h3>
+		Username:
+		<br>
+		<form id="portal" method="post" name="portal">
+		<input type="text" name="username" id="username" required></input>
+		<br>
+		Password:
+		<br>
+		<input type="password" name="password" id="password" required></input>
+                <br>
+		<br>
+		<button type="submit" onclick="validate()">Login</button>
+		</form>
+
+	<script>
+
+           function validate(){
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		if(username =="admin"){
+                   if (password == "admin"){
+			location.replace("doc.html");
+
+		   }
+		   else{
+			alert("Invalid Password");
+		   }
+		}
+		  else{
+			alert("Invalid Username");
+		  }
+
+
+	   }
+
+	</script>
+	</body>
+
+
+</html>

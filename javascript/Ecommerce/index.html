@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+
+
+	</head>
+<body>
+<style>
+      	
+    #mystery {
+                display: none;
+			    margin-top: 10px;
+			    list-style-type: none;
+			    text-align: left;
+
+		
+	}
+
+
+
+ 
+</style>
+	<ul style="display: inline; list-style-type:none; ">
+          <li style="display: inline; position:fixed;"><a href="../../index.html" style="text-decoration: none; color: black;">Home</a></li>
+	  <li style="margin-left:80px; display:inline; position: fixed;"><a href="../../phone.html" style="text-decoration: none; color: black;">Phone</a></li>
+	 
+	  <li style="margin-left:150px; display: inline; position:fixed;"><input type=text placeholder="Search"></li>
+	  <li style="display: inline; position: fixed; margin-left: 300px"><button>Search</button></li>
+ 	<li style="display:inline; margin-left:600px;">
+          <div style="display:inline-block;">
+          <button style="margin-left:20px; display: inline ; border:none;" onclick="Dropdown()">Dropdown</button>
+	     <ul id="mystery">
+		   	<div id="cart1" style="border-style: ridge;"></div>
+			<div id="cart2"style="border-style: ridge;"></div>
+			<div id="cart3"style="border-style: ridge;"></div>
+			<div id="cart4"style="border-style: ridge;"></div>
+			<div id="total"style="border-style: ridge;"></div>
+	     </ul>
+	    </div>
+          </li>
+	</ul>
+
+	<br>
+	<div id="item" style="margin-top:30px;">
+		<div id="item1" style="display:inline;">
+			<fieldset style="display:inline-block">
+				<legend>Laptop</legend>
+				<img src="https://c.s-microsoft.com/en-us/CMSImages/1920_Panel1_Hero_Laptop.jpg?version=090f3049-8032-1102-e65b-498904a634e1"width="150" height="150">
+				<br>
+				<label>Price: RM1,000</label>
+				<br>
+				<button onclick="addcart1()">Add Cart</button>
+			</fieldset>
+		</div>
+
+
+		<div id="item2" style="display:inline;">
+			<fieldset style="display:inline-block">
+				<legend>Keyboard</legend>
+				<img src="https://www.businessinsider.in/photo/78280940/Best-keyboards-in-India.jpg?imgsize=111214"width="150" height="150">
+				<br>
+				<label>Price: RM100</label>
+				<br>
+				<button onclick="addcart2()">Add Cart</button>
+			</fieldset>
+		</div>
+
+		<div id="item3" style="display:inline;">
+			<fieldset style="display:inline-block">
+				<legend>Headphone</legend>
+				<img src="https://static.musiciansfriend.com/thehub/binaries/content/gallery/mf/buying-guides/headphones-buying-guide-header.jpg"width="150" height="150">
+				<br>
+				<label>Price: RM200</label>
+				<br>
+				<button onclick="addcart3()">Add Cart</button>
+			</fieldset>
+		</div>
+
+		<div id="item4" style="display:inline;">
+			<fieldset style="display:inline-block">
+				<legend>Monitor</legend>
+				<img src="https://static.acer.com/up/Resource/Acer/Monitors/K3/Images/20200710/Acer_Monitor_K243Y_K273_modelmain.png"width="150" height="150">
+				<br>
+				<label>Price: RM600</label>
+				<br>
+				<button onclick="addcart4()">Add Cart</button>
+			</fieldset>
+		</div>
+		
+
+
+
+	</div>
+	<script>
+var total;
+m = isInteger(total);
+
+                   function Dropdown() {
+                             var x = document.getElementById("mystery");
+			   if (x.style.display === "block") {
+                            x.style.display = "none";
+
+			   }
+			   else 
+			   {
+				   x.style.display = "block";
+			   }
+			   
+		   }
+
+
+function addcart1(){
+
+	document.getElementById('cart1').innerHTML ='<li><img src="https://c.s-microsoft.com/en-us/CMSImages/1920_Panel1_Hero_Laptop.jpg?version=090f3049-8032-1102-e65b-498904a634e1" width="100" height="100">Laptop</li>'
+	m += 1000;
+	document.getElementById('total').innerHTML = m;
+}
+function addcart2(){
+
+	document.getElementById('cart2').innerHTML ='<li><img src="https://www.businessinsider.in/photo/78280940/Best-keyboards-in-India.jpg?imgsize=111214" width="100" height="100">Keyboard</li>'
+
+}
+function addcart3(){
+
+	document.getElementById('cart3').innerHTML ='<li><img src="https://static.musiciansfriend.com/thehub/binaries/content/gallery/mf/buying-guides/headphones-buying-guide-header.jpg" width="100" height="100">Headphone</li>'
+
+}
+function addcart4(){
+
+	document.getElementById('cart4').innerHTML ='<li><img src="https://static.acer.com/up/Resource/Acer/Monitors/K3/Images/20200710/Acer_Monitor_K243Y_K273_modelmain.png" width="100" height="100">Monitor</li>'
+
+}
+
+
+	</script>
+</body>
+</html>

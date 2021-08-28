@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>QR Code Scanner</title>
+		<script src="html5-qrcode.min.js"></script>
+		
+
+	</head>
+
+
+	<body>
+
+<div style="width: 500px" id="reader"></div>
+				
+
+	<script>
+var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+        
+function onScanSuccess(qrCodeMessage) {
+    // handle on success condition with the decoded message
+    html5QrcodeScanner.clear();
+    // ^ this will stop the scanner (video feed) and clear the scan area.
+}
+
+
+
+	</script>
+
+	</body>
+
+
+</html>
